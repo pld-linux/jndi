@@ -1,21 +1,42 @@
+%define	jndi_ver	1.2.1
+%define	nis_ver		1.2.1
+%define	rmi_ver		1.2.1
+%define	fs_ver		1.2beta3
+%define	cos_ver		1.2.1
+%define	ldap_ver	1.2.3
+%define	dns_ver		1.2
+%define	dsml_ver	1.2
 Summary:	Java Naming and Directory Interface
 Summary(pl):	Interfejs Javy do us³ug katalogowych
 Name:		jndi
-Version:	1.2.1
+Version:	%{jndi_ver}
 Release:	1
-License:	Sun Microsystems, Inc. Binary Code License (see COPYRIGHT files!)
+License:	restricted, non-distributable (see COPYRIGHT)
 Group:		Development/Languages/Java
-Source0:	%{name}1_2_1.zip
-Source1:	nis1_2_1.zip
-Source2:	rmiregistry1_2_1.zip
-Source3:	fscontext1_2beta3.zip
-Source4:	cosnaming1_2_1.zip
+Source0:	%{name}%(echo %{jndi_ver} | tr . _).zip
+Source1:	nis%(echo %{nis_ver} | tr . _).zip
+Source2:	rmiregistry%(echo %{rmi_ver} | tr . _).zip
+Source3:	fscontext%(echo %{fs_ver} | tr . _).zip
+Source4:	cosnaming%(echo %{cos_ver} | tr . _).zip
+Source5:	ldap-%(echo %{ldap_ver} | tr . _)-bin.zip
+Source6:	dns-%(echo %{dns_ver} | tr . _).zip
+Source7:	dsmlv1-%(echo %{dsml_ver} | tr . _).zip
 URL:		http://java.sun.com/products/jndi/
-Requires:	ldap >= 1.2.3
+NoSource:	0
+NoSource:	1
+NoSource:	2
+NoSource:	3
+NoSource:	4
+NoSource:	5
+NoSource:	6
+NoSource:	7
+BuildRequires:	unzip
+Requires:	jre >= 1.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_javalibdir	/usr/share/java
+%define		__unzip		unzip -n -q
 
 %description
 Java Naming and Directory Interface.
@@ -23,6 +44,101 @@ Java Naming and Directory Interface.
 %description -l pl
 Java Naming and Directory Interface - interfejs Javy do us³ug
 katalogowych.
+
+%package provider-nis
+Summary:	Java Naming and Directory Interface - NIS Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga NIS
+Version:	%{nis_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+
+%description provider-nis
+Java Naming and Directory Interface - NIS Service Provider.
+
+%description provider-nis -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga NIS.
+
+%package provider-rmiregistry
+Summary:	Java Naming and Directory Interface - RMI Registry Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga rejestru RMI
+Version:	%{rmi_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+
+%description provider-rmiregistry
+Java Naming and Directory Interface - Remote Method Invocation
+Registry Service Provider.
+
+%description provider-rmiregistry -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga rejestru RMI (Remote
+Method Invocation).
+
+%package provider-fscontext
+Summary:	Java Naming and Directory Interface - File System Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga systemu plików
+Version:	%{fs_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+
+%description provider-fscontext
+Java Naming and Directory Interface - File System Service Provider.
+
+%description provider-fscontext -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga systemu plików.
+
+%package provider-cosnaming
+Summary:	Java Naming and Directory Interface - COS Naming Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga COS
+Version:	%{cos_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+
+%description provider-cosnaming
+Java Naming and Directory Interface - COS Naming Service Provider.
+
+%description provider-cosnaming -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga COS.
+
+%package provider-ldap
+Summary:	Java Naming and Directory Interface - LDAP Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga LDAP
+Version:	%{ldap_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+Obsoletes:	ldap
+
+%description provider-ldap
+Java Naming and Directory Interface - LDAP Service Provider.
+
+%description provider-ldap -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga LDAP.
+
+%package provider-dns
+Summary:	Java Naming and Directory Interface - DNS Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga DNS
+Version:	%{dns_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+Requires:	jre >= 1.2
+
+%description provider-dns
+Java Naming and Directory Interface - DNS Service Provider.
+
+%description provider-dns -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga DNS.
+
+%package provider-dsmlv1
+Summary:	Java Naming and Directory Interface - DSMLv1 Service Provider
+Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga DSMLv1
+Version:	%{dsml_ver}
+Group:		Development/Languages/Java
+Requires:	jndi >= 1.2
+
+%description provider-dsmlv1
+Java Naming and Directory Interface - DSMLv1 Service Provider.
+
+%description provider-dsmlv1 -l pl
+Interfejs Javy do us³ug katalogowych - obs³uga DSMLv1.
 
 %package doc
 Summary:	Java Naming and Directory Interface documentation
@@ -36,37 +152,65 @@ Java Naming and Directory Interface documentation.
 Dokumentacja do Java Naming and Directory Interface.
 
 %prep
-%setup -q -c -n %{name}-%{version}/jndi
-%setup -q -c -T -n %{name}-%{version}/nis -a1
-%setup -q -c -T -n %{name}-%{version}/rmiregistry -a2
-%setup -q -c -T -n %{name}-%{version}/fscontext -a3
-%setup -q -c -T -n %{name}-%{version}/cosnaming -a4
+# fortunately 7 COPYRIGHT files (except dsml) are the same
+%setup -q -c -n %{name}-%{version} -a1 -a2 -a3 -a4 -a5 -a6
+mkdir dsml
+unzip -q %{SOURCE7} -d dsml
+mv -f dsml/doc/providers/* doc/providers
+# most recent providerutil.jar is in dsmlv1 package
+mv -f dsml/lib/* lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_javalibdir}
-cd ..
-install {jndi,nis,rmiregistry,fscontext,cosnaming}/lib/[!p]*.jar \
-	$RPM_BUILD_ROOT%{_javalibdir}
 
-mv -f jndi/COPYRIGHT jndi/COPYRIGHT.jndi
-mv -f nis/COPYRIGHT nis/COPYRIGHT.nis
-mv -f rmiregistry/COPYRIGHT rmiregistry/COPYRIGHT.rmiregistry
-mv -f fscontext/COPYRIGHT fscontext/COPYRIGHT.fscontext
-mv -f cosnaming/COPYRIGHT cosnaming/COPYRIGHT.cosnaming
-
-gzip -9nf {jndi,nis,rmiregistry,fscontext,cosnaming}/README*
-gzip -9nf {jndi,nis,rmiregistry,fscontext,cosnaming}/COPYRIGHT*
+install lib/*.jar $RPM_BUILD_ROOT%{_javalibdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ../{jndi,nis,rmiregistry,fscontext,cosnaming}/*.gz
-%{_javalibdir}/*.jar
+%doc COPYRIGHT README.txt
+%{_javalibdir}/jndi.jar
+%{_javalibdir}/providerutil.jar
+
+%files provider-nis
+%defattr(644,root,root,755)
+%doc README-NIS.txt
+%{_javalibdir}/nis.jar
+
+%files provider-rmiregistry
+%defattr(644,root,root,755)
+%doc README-RMIRegistry.txt
+%{_javalibdir}/rmiregistry.jar
+
+%files provider-fscontext
+%defattr(644,root,root,755)
+%doc README-FS.txt
+%{_javalibdir}/fscontext.jar
+
+%files provider-cosnaming
+%defattr(644,root,root,755)
+%doc README-COS.txt
+%{_javalibdir}/cosnaming.jar
+
+%files provider-ldap
+%defattr(644,root,root,755)
+%doc README-LDAP.txt
+%{_javalibdir}/jaas.jar
+%{_javalibdir}/ldap*.jar
+
+%files provider-dns
+%defattr(644,root,root,755)
+%doc README-DNS.txt
+%{_javalibdir}/dns.jar
+
+%files provider-dsmlv1
+%defattr(644,root,root,755)
+%doc dsml/COPYRIGHT dsml/README-DSML.txt
+%{_javalibdir}/dsml.jar
 
 %files doc
 %defattr(644,root,root,755)
-%doc ../{jndi,nis,rmiregistry,fscontext,cosnaming}/doc ../{jndi,cosnaming}/examples
+%doc doc examples
