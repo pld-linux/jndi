@@ -36,7 +36,7 @@ Requires:	jre >= 1.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_javalibdir	/usr/share/java
+%define		_javalibdir	%{_datadir}/java
 # turns off confirmations (but it doesn't work, WHY???)
 %define		__unzip		unzip -o -q
 
