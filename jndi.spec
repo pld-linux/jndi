@@ -155,7 +155,7 @@ Dokumentacja do Java Naming and Directory Interface.
 
 %prep
 # fortunately 7 COPYRIGHT files (except dsml) are the same
-%setup  -c -a1 -a2 -a3 -a4 -a5 -a6
+%setup -q -c -a1 -a2 -a3 -a4 -a5 -a6
 mkdir dsml
 %{__unzip} %{SOURCE7} -d dsml
 mv -f dsml/doc/providers/* doc/providers
