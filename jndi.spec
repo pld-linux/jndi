@@ -1,9 +1,10 @@
 %define	jndi_ver	1.2.1
 %define	nis_ver		1.2.1
 %define	rmi_ver		1.2.1
-%define	fs_ver		1.2beta3
+%define	fs_ver		1.2
+%define	fs_ver2		beta3
 %define	cos_ver		1.2.1
-%define	ldap_ver	1.2.3
+%define	ldap_ver	1.2.4
 %define	dns_ver		1.2
 %define	dsml_ver	1.2
 Summary:	Java Naming and Directory Interface
@@ -13,12 +14,12 @@ Version:	%{jndi_ver}
 Release:	1
 License:	restricted, non-distributable (see COPYRIGHT)
 Group:		Development/Languages/Java
-Source0:	%{name}%(echo %{jndi_ver} | tr . _).zip
-Source1:	nis%(echo %{nis_ver} | tr . _).zip
-Source2:	rmiregistry%(echo %{rmi_ver} | tr . _).zip
-Source3:	fscontext%(echo %{fs_ver} | tr . _).zip
-Source4:	cosnaming%(echo %{cos_ver} | tr . _).zip
-Source5:	ldap-%(echo %{ldap_ver} | tr . _)-bin.zip
+Source0:	%{name}-%(echo %{jndi_ver} | tr . _).zip
+Source1:	nis-%(echo %{nis_ver} | tr . _).zip
+Source2:	rmiregistry-%(echo %{rmi_ver} | tr . _).zip
+Source3:	fscontext-%(echo %{fs_ver} | tr . _)-%{fs_ver2}.zip
+Source4:	cosnaming-%(echo %{cos_ver} | tr . _).zip
+Source5:	ldap-%(echo %{ldap_ver} | tr . _).zip
 Source6:	dns-%(echo %{dns_ver} | tr . _).zip
 Source7:	dsmlv1-%(echo %{dsml_ver} | tr . _).zip
 URL:		http://java.sun.com/products/jndi/
@@ -36,7 +37,8 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_javalibdir	/usr/share/java
-%define		__unzip		unzip -n -q
+# turns off confirmations (but it doesn't work, WHY???)
+%define		__unzip		unzip -o -q
 
 %description
 Java Naming and Directory Interface.
@@ -153,9 +155,9 @@ Dokumentacja do Java Naming and Directory Interface.
 
 %prep
 # fortunately 7 COPYRIGHT files (except dsml) are the same
-%setup -q -c -n %{name}-%{version} -a1 -a2 -a3 -a4 -a5 -a6
+%setup  -c -n %{name}-%{version} -a1 -a2 -a3 -a4 -a5 -a6
 mkdir dsml
-unzip -q %{SOURCE7} -d dsml
+%{__unzip} %{SOURCE7} -d dsml
 mv -f dsml/doc/providers/* doc/providers
 # most recent providerutil.jar is in dsmlv1 package
 mv -f dsml/lib/* lib
