@@ -5,7 +5,7 @@ Version:	1.2.1
 Release:	1
 License:	Sun Microsystems, Inc. Binary Code License (see COPYRIGHT files!)
 Group:		Development/Languages/Java
-Source0:	jndi1_2_1.zip
+Source0:	%{name}1_2_1.zip
 Source1:	nis1_2_1.zip
 Source2:	rmiregistry1_2_1.zip
 Source3:	fscontext1_2beta3.zip
@@ -21,7 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Java Naming and Directory Interface.
 
 %description -l pl
-Java Naming and Directory Interface - interfejs Javy do us³ug katalogowych.
+Java Naming and Directory Interface - interfejs Javy do us³ug
+katalogowych.
 
 %package doc
 Summary:	Java Naming and Directory Interface documentation
@@ -55,7 +56,7 @@ mv -f rmiregistry/COPYRIGHT rmiregistry/COPYRIGHT.rmiregistry
 mv -f fscontext/COPYRIGHT fscontext/COPYRIGHT.fscontext
 mv -f cosnaming/COPYRIGHT cosnaming/COPYRIGHT.cosnaming
 
-gzip -9nf {jndi,nis,rmiregistry,fscontext,cosnaming}/README* 
+gzip -9nf {jndi,nis,rmiregistry,fscontext,cosnaming}/README*
 gzip -9nf {jndi,nis,rmiregistry,fscontext,cosnaming}/COPYRIGHT*
 
 %clean
