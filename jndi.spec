@@ -5,8 +5,6 @@ Version:	1.2.1
 Release:	1
 License:	Sun Microsystems, Inc. Binary Code License (see COPYRIGHT files!)
 Group:		Development/Languages/Java
-Group(de):	Entwicklung/Sprachen/Java
-Group(pl):	Programowanie/Jêzyki/Java
 Source0:	jndi1_2_1.zip
 Source1:	nis1_2_1.zip
 Source2:	rmiregistry1_2_1.zip
@@ -29,8 +27,6 @@ Java Naming and Directory Interface - interfejs Javy do us³ug katalogowych.
 Summary:	Java Naming and Directory Interface documentation
 Summary(pl):	Dokumentacja do Java Naming and Directory Interface
 Group:		Development/Languages/Java
-Group(de):	Entwicklung/Sprachen/Java
-Group(pl):	Programowanie/Jêzyki/Java
 
 %description doc
 Java Naming and Directory Interface documentation.
