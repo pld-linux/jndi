@@ -106,6 +106,7 @@ Summary:	Java Naming and Directory Interface - LDAP Service Provider
 Summary(pl):	Interfejs Javy do us³ug katalogowych - obs³uga LDAP
 Version:	%{ldap_ver}
 Group:		Development/Languages/Java
+Requires:	jaas >= 1.0
 Requires:	jndi >= 1.2
 Obsoletes:	ldap
 
@@ -162,6 +163,9 @@ mv -f dsml/doc/providers/* doc/providers
 # most recent providerutil.jar is in dsmlv1 package
 mv -f dsml/lib/* lib
 
+# this one is in separate package
+rm -f lib/jaas.jar
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_javalibdir}
@@ -200,7 +204,6 @@ rm -rf $RPM_BUILD_ROOT
 %files provider-ldap
 %defattr(644,root,root,755)
 %doc README-LDAP.txt
-%{_javalibdir}/jaas.jar
 %{_javalibdir}/ldap*.jar
 
 %files provider-dns
