@@ -8,7 +8,7 @@
 %define	dns_ver		1.2
 %define	dsml_ver	1.2
 Summary:	Java Naming and Directory Interface
-Summary(pl):	Interfejs Javy do us≥ug katalogowych
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych
 Name:		jndi
 Version:	%{jndi_ver}
 Release:	1
@@ -43,13 +43,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Java Naming and Directory Interface.
 
-%description -l pl
-Java Naming and Directory Interface - interfejs Javy do us≥ug
+%description -l pl.UTF-8
+Java Naming and Directory Interface - interfejs Javy do us≈Çug
 katalogowych.
 
 %package provider-nis
 Summary:	Java Naming and Directory Interface - NIS Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga NIS
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga NIS
 Version:	%{nis_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -57,12 +57,12 @@ Requires:	jndi >= 1.2
 %description provider-nis
 Java Naming and Directory Interface - NIS Service Provider.
 
-%description provider-nis -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga NIS.
+%description provider-nis -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga NIS.
 
 %package provider-rmiregistry
 Summary:	Java Naming and Directory Interface - RMI Registry Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga rejestru RMI
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga rejestru RMI
 Version:	%{rmi_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -71,13 +71,13 @@ Requires:	jndi >= 1.2
 Java Naming and Directory Interface - Remote Method Invocation
 Registry Service Provider.
 
-%description provider-rmiregistry -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga rejestru RMI (Remote
+%description provider-rmiregistry -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga rejestru RMI (Remote
 Method Invocation).
 
 %package provider-fscontext
 Summary:	Java Naming and Directory Interface - File System Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga systemu plikÛw
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga systemu plik√≥w
 Version:	%{fs_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -85,12 +85,12 @@ Requires:	jndi >= 1.2
 %description provider-fscontext
 Java Naming and Directory Interface - File System Service Provider.
 
-%description provider-fscontext -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga systemu plikÛw.
+%description provider-fscontext -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga systemu plik√≥w.
 
 %package provider-cosnaming
 Summary:	Java Naming and Directory Interface - COS Naming Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga COS
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga COS
 Version:	%{cos_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -98,12 +98,12 @@ Requires:	jndi >= 1.2
 %description provider-cosnaming
 Java Naming and Directory Interface - COS Naming Service Provider.
 
-%description provider-cosnaming -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga COS.
+%description provider-cosnaming -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga COS.
 
 %package provider-ldap
 Summary:	Java Naming and Directory Interface - LDAP Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga LDAP
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga LDAP
 Version:	%{ldap_ver}
 Group:		Development/Languages/Java
 Requires:	jaas >= 1.0
@@ -113,12 +113,12 @@ Obsoletes:	ldap
 %description provider-ldap
 Java Naming and Directory Interface - LDAP Service Provider.
 
-%description provider-ldap -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga LDAP.
+%description provider-ldap -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga LDAP.
 
 %package provider-dns
 Summary:	Java Naming and Directory Interface - DNS Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga DNS
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga DNS
 Version:	%{dns_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -127,12 +127,12 @@ Requires:	jre >= 1.2
 %description provider-dns
 Java Naming and Directory Interface - DNS Service Provider.
 
-%description provider-dns -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga DNS.
+%description provider-dns -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga DNS.
 
 %package provider-dsmlv1
 Summary:	Java Naming and Directory Interface - DSMLv1 Service Provider
-Summary(pl):	Interfejs Javy do us≥ug katalogowych - obs≥uga DSMLv1
+Summary(pl.UTF-8):   Interfejs Javy do us≈Çug katalogowych - obs≈Çuga DSMLv1
 Version:	%{dsml_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -140,18 +140,18 @@ Requires:	jndi >= 1.2
 %description provider-dsmlv1
 Java Naming and Directory Interface - DSMLv1 Service Provider.
 
-%description provider-dsmlv1 -l pl
-Interfejs Javy do us≥ug katalogowych - obs≥uga DSMLv1.
+%description provider-dsmlv1 -l pl.UTF-8
+Interfejs Javy do us≈Çug katalogowych - obs≈Çuga DSMLv1.
 
 %package doc
 Summary:	Java Naming and Directory Interface documentation
-Summary(pl):	Dokumentacja do Java Naming and Directory Interface
+Summary(pl.UTF-8):   Dokumentacja do Java Naming and Directory Interface
 Group:		Development/Languages/Java
 
 %description doc
 Java Naming and Directory Interface documentation.
 
-%description doc -l pl
+%description doc -l pl.UTF-8
 Dokumentacja do Java Naming and Directory Interface.
 
 %prep
