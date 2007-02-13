@@ -8,7 +8,7 @@
 %define	dns_ver		1.2
 %define	dsml_ver	1.2
 Summary:	Java Naming and Directory Interface
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych
 Name:		jndi
 Version:	%{jndi_ver}
 Release:	1
@@ -49,7 +49,7 @@ katalogowych.
 
 %package provider-nis
 Summary:	Java Naming and Directory Interface - NIS Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa NIS
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa NIS
 Version:	%{nis_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -62,7 +62,7 @@ Interfejs Javy do usług katalogowych - obsługa NIS.
 
 %package provider-rmiregistry
 Summary:	Java Naming and Directory Interface - RMI Registry Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa rejestru RMI
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa rejestru RMI
 Version:	%{rmi_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -77,7 +77,7 @@ Method Invocation).
 
 %package provider-fscontext
 Summary:	Java Naming and Directory Interface - File System Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa systemu plików
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa systemu plików
 Version:	%{fs_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -90,7 +90,7 @@ Interfejs Javy do usług katalogowych - obsługa systemu plików.
 
 %package provider-cosnaming
 Summary:	Java Naming and Directory Interface - COS Naming Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa COS
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa COS
 Version:	%{cos_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -103,7 +103,7 @@ Interfejs Javy do usług katalogowych - obsługa COS.
 
 %package provider-ldap
 Summary:	Java Naming and Directory Interface - LDAP Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa LDAP
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa LDAP
 Version:	%{ldap_ver}
 Group:		Development/Languages/Java
 Requires:	jaas >= 1.0
@@ -118,7 +118,7 @@ Interfejs Javy do usług katalogowych - obsługa LDAP.
 
 %package provider-dns
 Summary:	Java Naming and Directory Interface - DNS Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa DNS
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa DNS
 Version:	%{dns_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -132,7 +132,7 @@ Interfejs Javy do usług katalogowych - obsługa DNS.
 
 %package provider-dsmlv1
 Summary:	Java Naming and Directory Interface - DSMLv1 Service Provider
-Summary(pl.UTF-8):   Interfejs Javy do usług katalogowych - obsługa DSMLv1
+Summary(pl.UTF-8):	Interfejs Javy do usług katalogowych - obsługa DSMLv1
 Version:	%{dsml_ver}
 Group:		Development/Languages/Java
 Requires:	jndi >= 1.2
@@ -145,7 +145,7 @@ Interfejs Javy do usług katalogowych - obsługa DSMLv1.
 
 %package doc
 Summary:	Java Naming and Directory Interface documentation
-Summary(pl.UTF-8):   Dokumentacja do Java Naming and Directory Interface
+Summary(pl.UTF-8):	Dokumentacja do Java Naming and Directory Interface
 Group:		Development/Languages/Java
 
 %description doc
